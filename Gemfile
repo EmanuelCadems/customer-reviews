@@ -50,12 +50,15 @@ group :development do
 end
 
 group :test do
+  gem 'database_cleaner', '1.7.0'
   gem 'shoulda-matchers', '3.1.2'
   gem 'simplecov', '0.16.1', require: false
   gem 'vcr', '4.0.0'
   gem 'webmock', '3.4.2'
 end
 
+gem 'factory_bot_rails', '4.11.1'
+gem 'faker', '1.9.1'
 gem 'figaro', '1.1.1'
 gem 'raddocs', '2.2.0'
 
