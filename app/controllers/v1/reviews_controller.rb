@@ -1,5 +1,6 @@
 module V1
   class ReviewsController < ApplicationController
+    before_action :load_resource, only: [:update, :destroy]
     def create
       review = Review.new(review_params)
       if review.save
@@ -10,15 +11,25 @@ module V1
     end
 
     def update
-      review = Review.find(params[:id])
-      if review.update(review_params)
-        render json: review, status: 200
+      if @review.update(review_params)
+        render json: @review, status: 200
       else
-        render json: review.errors, status: 422
+        render json: @review.errors, status: 422
       end
     end
 
+    def destroy
+      @review.destroy
+      head 204
+    end
+
     private
+
+    def load_resource
+      @review = Review.find(params[:id])
+    rescue ActiveRecord::RecordNotFound => e
+      head 404
+    end
 
     def review_params
       params.require(:review).permit(

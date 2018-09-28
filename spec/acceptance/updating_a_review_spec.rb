@@ -125,5 +125,16 @@ resource 'V1::Reviews', prefix: '/v1' do
         expect(errors[:store_id]).to include("has already been taken")
       end
     end
+    patch '/v1/reviews/:id' do
+      let(:id)       { 100 }
+
+      let(:raw_post) { params.to_json }
+
+      example_request 'update non-existent resource' do
+        explanation 'Returns not found '
+
+        expect(status).to eq(404)
+      end
+    end
   end
 end
