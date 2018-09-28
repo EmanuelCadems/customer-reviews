@@ -2,6 +2,7 @@ class Review < ApplicationRecord
   acts_as_paranoid
 
   SCORES = (1..5).to_a
+
   validates :store_id, presence: true,
     uniqueness: { scope: [:order_id, :user_id] }
   validates :order_id, presence: true

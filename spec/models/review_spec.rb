@@ -49,5 +49,10 @@ RSpec.describe Review, type: :model do
     it 'marks the row as deleted' do
       expect(Review.only_deleted.first.deleted_at).not_to be(nil)
     end
+
+    it 'allows to recover the deleted row' do
+      Review.only_deleted.first.recover
+      expect(Review.all).to include(review)
+    end
   end
 end
