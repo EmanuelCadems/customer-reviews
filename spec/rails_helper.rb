@@ -1,8 +1,23 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
-require 'shoulda_matchers'
+require 'simplecov'
 
 ENV['RAILS_ENV'] ||= 'test'
+
+if ENV['RAILS_ENV'] == 'test'
+  require 'simplecov'
+  SimpleCov.start 'rails' do
+    add_filter 'app/mailers/application_mailer.rb'
+    add_filter 'app/channels/application_cable/connection.rb'
+    add_filter 'app/channels/application_cable/channel.rb'
+    add_filter 'app/models/application_record.rb'
+    add_filter 'app/jobs/application_job.rb'
+    add_filter 'app/controllers/application_controller.rb'
+
+    add_group 'Services', ['app/services']
+  end
+end
+
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
@@ -60,4 +75,17 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+end
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    # Choose a test framework:
+    with.test_framework :rspec
+
+    # Choose one or more libraries:
+    # with.library :active_record
+    # with.library :active_model
+    # with.library :action_controller
+    # Or, choose the following (which implies all of the above):
+    with.library :rails
+  end
 end
