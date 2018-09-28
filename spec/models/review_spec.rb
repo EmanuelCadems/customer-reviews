@@ -30,4 +30,24 @@ RSpec.describe Review, type: :model do
       end
     end
   end
+
+  describe 'soft-delete' do
+    let(:review) { create(:review) }
+
+    before do
+      review.delete
+    end
+
+    it 'removes the row from all' do
+      expect(Review.all).to be_empty
+    end
+
+    it 'soft deletes the row' do
+      expect(Review.only_deleted).to include(review)
+    end
+
+    it 'marks the row as deleted' do
+      expect(Review.only_deleted.first.deleted_at).not_to be(nil)
+    end
+  end
 end

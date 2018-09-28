@@ -57,6 +57,7 @@ group :test do
   gem 'webmock', '3.4.2'
 end
 
+gem 'acts_as_paranoid'
 gem 'factory_bot_rails', '4.11.1'
 gem 'faker', '1.9.1'
 gem 'figaro', '1.1.1'
