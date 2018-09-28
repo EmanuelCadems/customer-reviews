@@ -1,14 +1,27 @@
 require 'acceptance_helper'
 
 resource 'V1::Reviews', prefix: '/v1' do
+
   header 'Accept', 'application/json'
   header 'Content-Type', 'application/json'
 
-  before do
-    header 'Authorization', "Token token=#{ENV['USER_API_KEY']}"
-  end
+  let(:review) { create(:review) }
 
-  context 'valid' do
+  context 'valid api_key' do
+    before do
+      header 'Authorization', "Token token=#{ENV['MODERATOR_API_KEY']}"
+    end
+
+    get '/v1/reviews/:id' do
+      let(:id) { review.id }
+
+      example_request 'show with a valid moderator api_key' do
+        explanation 'Shows a review '
+
+        expect(status).to eq(200)
+      end
+    end
+
     post '/v1/reviews' do
       parameter :store_id, 'Store ID', scope: :review, required: true,
                                                        type: :integer
@@ -30,25 +43,24 @@ resource 'V1::Reviews', prefix: '/v1' do
 
       let(:raw_post) { params.to_json }
 
-      example_request 'create' do
+      example_request 'create with a valid moderator api_key' do
         explanation 'Creates a new review '
 
         expect(status).to eq(201)
-
-        review = JSON.parse(response_body, symbolize_names: true)
-
-        expect(review[:store_id]).to eq(store_id)
-        expect(review[:order_id]).to eq(order_id)
-        expect(review[:order_id]).to eq(order_id)
-        expect(review[:user_id]).to eq(user_id)
-        expect(review[:opinion]).to eq(opinion)
-        expect(review[:score]).to eq(score)
       end
     end
-  end
 
-  context 'invalid' do
-    post '/v1/reviews' do
+    delete '/v1/reviews/:id' do
+      let(:id)       { review.id }
+
+      example_request 'delete with a valid moderator api_key' do
+        explanation 'Deletes a review '
+
+        expect(status).to eq(204)
+      end
+    end
+
+    patch '/v1/reviews/:id' do
       parameter :store_id, 'Store ID', scope: :review, required: true,
                                                        type: :integer
       parameter :order_id, 'Order ID', scope: :review, required: true,
@@ -61,29 +73,36 @@ resource 'V1::Reviews', prefix: '/v1' do
         minimum: Review::SCORES.min, maximum: Review::SCORES.max,
         default: Review::SCORES.max
 
-      let(:score) { 6 }
+      let(:id)       { review.id }
+      let(:store_id) { 1 }
+      let(:order_id) { 1 }
+      let(:user_id)  { 1 }
+      let(:opinion)  { 'Good food and service' }
+      let(:score)    { 5 }
 
       let(:raw_post) { params.to_json }
 
-      example_request 'create invalid score and empty values' do
-        explanation 'Does not create a review with empty values '
+      example_request 'update' do
+        explanation 'Updates a review '
 
-        expect(status).to eq(422)
+        expect(status).to eq(200)
+      end
+    end
+  end
 
-        errors = JSON.parse(response_body, symbolize_names: true)
+  context 'invalid api_key' do
+    before do
+      header 'Authorization', 'Token token=invalid'
+    end
 
-        expect(errors[:store_id]).to include("can't be blank")
-        expect(errors[:order_id]).to include("can't be blank")
-        expect(errors[:user_id]).to include("can't be blank")
-        expect(errors[:opinion]).to include("can't be blank")
-        expect(errors[:score]).to include("#{score} is not a valid score")
+    get '/v1/reviews/:id' do
+      let(:id) { review.id }
+      example_request 'show with invalid api_key' do
+        expect(status).to eq(401)
       end
     end
 
     post '/v1/reviews' do
-      before do
-        create(:review, store_id: 1, order_id: 1, user_id: 1)
-      end
       parameter :store_id, 'Store ID', scope: :review, required: true,
                                                        type: :integer
       parameter :order_id, 'Order ID', scope: :review, required: true,
@@ -100,18 +119,54 @@ resource 'V1::Reviews', prefix: '/v1' do
       let(:order_id) { 1 }
       let(:user_id) { 1 }
       let(:opinion) { 'Good food and service' }
-      let(:score) { 1 }
+      let(:score) { 5 }
 
       let(:raw_post) { params.to_json }
 
-      example_request 'create invalid score a review already scored' do
-        explanation 'Does not create a review that already was scored '
+      example_request 'create with invalid api_key' do
+        expect(status).to eq(401)
+      end
+    end
 
-        expect(status).to eq(422)
+    patch '/v1/reviews/:id' do
+      parameter :store_id, 'Store ID', scope: :review, required: true,
+                                                       type: :integer
+      parameter :order_id, 'Order ID', scope: :review, required: true,
+                                                       type: :integer
+      parameter :user_id, 'User ID', scope: :review, required: true,
+                                                     type: :integer
+      parameter :opinion, 'Opinion', scope: :review, required: true,
+                                                     type: :string
+      parameter :score, "Score", scope: :review, required: true, type: :integer,
+        minimum: Review::SCORES.min, maximum: Review::SCORES.max,
+        default: Review::SCORES.max
 
-        errors = JSON.parse(response_body, symbolize_names: true)
+      let(:id)       { review.id }
+      let(:store_id) { 1 }
+      let(:order_id) { 1 }
+      let(:user_id)  { 1 }
+      let(:opinion)  { 'Good food and service' }
+      let(:score)    { 5 }
 
-        expect(errors[:store_id]).to include("has already been taken")
+      let(:raw_post) { params.to_json }
+
+      example_request 'update with invalid api_key' do
+        expect(status).to eq(401)
+      end
+    end
+  end
+
+  context 'invalid role' do
+    before do
+      header 'Authorization', "Token token=#{ENV['USER_API_KEY']}"
+    end
+
+    delete '/v1/reviews/:id' do
+      let(:id)       { review.id }
+
+      example_request 'delete with invalid api_key' do
+
+        expect(status).to eq(401)
       end
     end
   end

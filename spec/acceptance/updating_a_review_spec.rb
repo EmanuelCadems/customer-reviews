@@ -8,7 +8,7 @@ resource 'V1::Reviews', prefix: '/v1' do
   let(:review) { create(:review) }
 
   before do
-    header 'Authorization', "Token token=#{ENV['API_KEY']}"
+    header 'Authorization', "Token token=#{ENV['USER_API_KEY']}"
   end
 
   context 'valid' do

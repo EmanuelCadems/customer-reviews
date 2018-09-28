@@ -1,6 +1,13 @@
 module V1
   class ReviewsController < ApplicationController
-    before_action :load_resource, only: [:update, :destroy]
+    before_action :authenticate, only: [:show, :create, :update]
+    before_action :authenticate_moderator, only: [:destroy]
+    before_action :load_resource, only: [:show, :update, :destroy]
+
+    def show
+      render json: @review, status: 200
+    end
+
     def create
       review = Review.new(review_params)
       if review.save

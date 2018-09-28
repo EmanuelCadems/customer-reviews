@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   mount Raddocs::App => "/docs"
 
   namespace :v1 do
-    resources :reviews, only: [:create, :update, :destroy]
+    resources :reviews, except: [:index]
   end
 end
