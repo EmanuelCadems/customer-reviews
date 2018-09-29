@@ -13,6 +13,10 @@ class ApplicationController < ActionController::API
     authenticate_token(ENV['MODERATOR_API_KEY']) || render_unauthorized
   end
 
+  def authenticate_admin
+    authenticate_token(ENV['ADMIN_API_KEY']) || render_unauthorized
+  end
+
   def authenticate_token(api_key)
     authenticate_with_http_token do |token, options|
       token == api_key
