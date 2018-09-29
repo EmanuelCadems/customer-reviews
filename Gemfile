@@ -62,6 +62,7 @@ gem 'factory_bot_rails', '4.11.1'
 gem 'faker', '1.9.1'
 gem 'figaro', '1.1.1'
 gem 'raddocs', '2.2.0'
+gem 'ransack', github: 'activerecord-hackery/ransack'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

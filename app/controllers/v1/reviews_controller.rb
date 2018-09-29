@@ -1,8 +1,19 @@
 module V1
   class ReviewsController < ApplicationController
-    before_action :authenticate, only: [:show, :create, :update]
+    before_action :authenticate, only: [:show, :create, :update, :index]
     before_action :authenticate_moderator, only: [:destroy]
     before_action :load_resource, only: [:show, :update, :destroy]
+
+    def index
+      q = Review.ransack(params[:q])
+      reviews = q.result
+
+      if reviews.any?
+        render json: reviews, status: 200
+      else
+        head 204
+      end
+    end
 
     def show
       render json: @review, status: 200
