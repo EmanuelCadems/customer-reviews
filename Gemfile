@@ -64,5 +64,6 @@ gem 'figaro', '1.1.1'
 gem 'raddocs', '2.2.0'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 
+gem 'timecop', '0.9.1'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
