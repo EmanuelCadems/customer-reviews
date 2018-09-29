@@ -6,5 +6,10 @@ FactoryBot.define do
     sequence(:user_id) { |n| n }
     opinion { Faker::Lorem.paragraph }
     score { Review::SCORES.sample }
+
+    trait :last_month do
+      created_at { Time.now.last_month }
+      updated_at { Time.now.last_month }
+    end
   end
 end
