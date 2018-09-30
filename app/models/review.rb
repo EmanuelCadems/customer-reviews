@@ -12,9 +12,10 @@ class Review < ApplicationRecord
     inclusion: { in: SCORES, message: "%{value} is not a valid score" }
 
   scope :by_store, -> (store_id) { where(store_id: store_id) }
-  scope :between,  -> (from, to) { where(created_at: from..to) }
+  scope :between,  -> (from, to) {
+    where(created_at: from&.to_date&.beginning_of_day..to&.to_date&.end_of_day)
+  }
   scope :score_avg_by_store_and_period, -> (store_id, from, to) {
     by_store(store_id).between(from, to).average(:score)
   }
 end
-

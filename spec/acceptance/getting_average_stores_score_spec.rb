@@ -40,6 +40,8 @@ resource 'V1::StoresScore', prefix: '/v1' do
   context 'without matching' do
     get '/v1/stores_score/:id?from=:from&to=:to' do
       let(:id) { 100 }
+      let(:from) { nil }
+      let(:to) { nil }
 
       example_request 'show a non-existent store' do
         explanation 'Shows 204'

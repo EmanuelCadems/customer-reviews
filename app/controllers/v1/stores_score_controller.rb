@@ -13,7 +13,7 @@ module V1
 
     def set_avg
       @avg = Review.score_avg_by_store_and_period(
-               params[:id], params[:from], params[:to]
+              params[:id], params[:from], params[:to]
              )
     end
   end

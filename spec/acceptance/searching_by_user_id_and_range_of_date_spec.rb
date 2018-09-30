@@ -14,7 +14,7 @@ resource 'V1::Reviews', prefix: '/v1' do
 
   context 'matching' do
     get '/v1/reviews?q[user_id_eq]=:user_id&q[created_at_gteq]=:from&' +
-        'q[created_at_lteq]=:to' do
+        'q[created_at_end_of_day_lteq]=:to' do
       let(:user_id) { 1 }
       let(:from)    { Date.today.beginning_of_month }
       let(:to)      { Date.today.end_of_month }
@@ -33,7 +33,7 @@ resource 'V1::Reviews', prefix: '/v1' do
 
   context 'no-matching' do
     get '/v1/reviews?q[user_id_eq]=:user_id&q[created_at_gteq]=:from&' +
-        'q[created_at_lteq]=:to' do
+        'q[created_at_end_of_day_lteq]=:to' do
       let(:user_id) { 2 }
       let(:from)    { Date.today.beginning_of_month }
       let(:to)      { Date.today.end_of_month }

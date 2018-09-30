@@ -5,7 +5,7 @@ resource 'V1::Reviews', prefix: '/v1' do
   header 'Content-Type', 'application/json'
 
   before do
-    Timecop.freeze(Time.now.last_month)
+    Timecop.freeze(Date.today.last_month.beginning_of_month.beginning_of_day)
     create_list(:review, 6, store_id: 1)
     Timecop.return
     create_list(:review, 4, store_id: 1)
@@ -14,7 +14,7 @@ resource 'V1::Reviews', prefix: '/v1' do
 
   context 'matching' do
     get '/v1/reviews?q[store_id_eq]=:store_id&q[created_at_gteq]=:from&' +
-        'q[created_at_lteq]=:to' do
+        'q[created_at_end_of_day_lteq]=:to' do
       let(:store_id) { 1 }
       let(:from)     { Date.today.beginning_of_month }
       let(:to)       { Date.today.end_of_month }
@@ -33,7 +33,7 @@ resource 'V1::Reviews', prefix: '/v1' do
 
   context 'no-matching' do
     get '/v1/reviews?q[store_id_eq]=:store_id&q[created_at_gteq]=:from&' +
-        'q[created_at_lteq]=:to' do
+        'q[created_at_end_of_day_lteq]=:to' do
       let(:store_id) { 2 }
       let(:from)     { Date.today.beginning_of_month }
       let(:to)       { Date.today.end_of_month }
