@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>V1::Reviews API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>V1::Reviews API</h1>
+
+      <div class="article">
+        <h2>create</h2>
+        <h3>POST /v1/reviews</h3>
+          <p class="explanation">
+            Creates a new review 
+          </p>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="required">
+                    <span class="name">review[store_id]</span>
+                </td>
+                <td>
+                  <span class="description">Store ID</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">review[order_id]</span>
+                </td>
+                <td>
+                  <span class="description">Order ID</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">review[user_id]</span>
+                </td>
+                <td>
+                  <span class="description">User ID</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">review[opinion]</span>
+                </td>
+                <td>
+                  <span class="description">Opinion</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">review[score]</span>
+                </td>
+                <td>
+                  <span class="description">Score</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Accept: application/json
+Content-Type: application/json
+Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST /v1/reviews</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"review":{"store_id":1,"order_id":1,"user_id":1,"opinion":"Good food and service","score":5}}</pre>
+
+            <h4>cURL</h4>
+            <pre class="request curl">curl &quot;localhost:3000/v1/reviews&quot; -d &#39;{&quot;review&quot;:{&quot;store_id&quot;:1,&quot;order_id&quot;:1,&quot;user_id&quot;:1,&quot;opinion&quot;:&quot;Good food and service&quot;,&quot;score&quot;:5}}&#39; -X POST \
+	-H &quot;Accept: application/json&quot; \
+	-H &quot;Content-Type: application/json&quot; \
+	-H &quot;Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt&quot; \
+	-H &quot;Host: example.org&quot; \
+	-H &quot;Cookie: &quot;</pre>
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">Content-Type: application/json; charset=utf-8
+ETag: W/&quot;b097946a35124f9c6f13481fefba2113&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 1254c912-5b42-4799-9859-3ed5b62eb45e
+X-Runtime: 0.009615
+Content-Length: 199</pre>
+            <h4>Status</h4>
+            <pre class="response status">201 Created</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;id&quot;: 12,
+  &quot;store_id&quot;: 1,
+  &quot;order_id&quot;: 1,
+  &quot;user_id&quot;: 1,
+  &quot;opinion&quot;: &quot;Good food and service&quot;,
+  &quot;score&quot;: 5,
+  &quot;created_at&quot;: &quot;2018-10-01T04:40:16.008-03:00&quot;,
+  &quot;updated_at&quot;: &quot;2018-10-01T04:40:16.008-03:00&quot;,
+  &quot;deleted_at&quot;: null
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

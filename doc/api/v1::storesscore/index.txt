@@ -1,0 +1,49 @@
+average store score
+-------------------
+
+Request:
+  GET /v1/stores_score/1?from=2018-10-01&to=2018-10-31
+  Accept: application/json
+  Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  from=2018-10-01
+  to=2018-10-31
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 13
+  Content-Type: application/json; charset=utf-8
+  ETag: W/"a35aa8037666df5e122f8d5f0ff7a8c3"
+  X-Request-Id: f2dd142a-6618-4c81-9d79-73c47b230086
+  X-Runtime: 0.031430
+
+  {
+    "avg": "2.5"
+  }
+
+
+show a non-existent store
+-------------------------
+
+Request:
+  GET /v1/stores_score/100?from=&to=
+  Accept: application/json
+  Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  from=
+  to=
+
+Response:
+  Status: 204 No Content
+  Cache-Control: no-cache
+  X-Request-Id: e5fdec4a-e83f-4f7b-af94-9a2007283e85
+  X-Runtime: 0.019132
+
+

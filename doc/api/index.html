@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customer Reviews</title>
+  <meta charset="utf-8">
+  <style>
+    
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: &quot;required&quot;;
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Customer Reviews</h1>
+  This API allows you to manage customer reviews inside different stores and orders
+  <div class="article">
+    <h2>V1::Reviews</h2>
+
+    <ul>
+      <li>
+        <a href="v1reviews/create.html">create</a>
+      </li>
+      <li>
+        <a href="v1reviews/create_invalid_score_a_review_already_scored.html">create invalid score a review already scored</a>
+      </li>
+      <li>
+        <a href="v1reviews/create_invalid_score_and_empty_values.html">create invalid score and empty values</a>
+      </li>
+      <li>
+        <a href="v1reviews/create_with_a_valid_moderator_api_key.html">create with a valid moderator api_key</a>
+      </li>
+      <li>
+        <a href="v1reviews/create_with_invalid_api_key.html">create with invalid api_key</a>
+      </li>
+      <li>
+        <a href="v1reviews/create_with_invalid_api_key.html">create with invalid api_key</a>
+      </li>
+      <li>
+        <a href="v1reviews/delete.html">delete</a>
+      </li>
+      <li>
+        <a href="v1reviews/delete_non-existent_resource.html">delete non-existent resource</a>
+      </li>
+      <li>
+        <a href="v1reviews/delete_with_a_valid_moderator_api_key.html">delete with a valid moderator api_key</a>
+      </li>
+      <li>
+        <a href="v1reviews/delete_with_invalid_api_key.html">delete with invalid api_key</a>
+      </li>
+      <li>
+        <a href="v1reviews/delete_with_invalid_api_key.html">delete with invalid api_key</a>
+      </li>
+      <li>
+        <a href="v1reviews/search_by_non-existent_store_id_&amp;_range_of_date.html">search by non-existent store_id &amp; range of date</a>
+      </li>
+      <li>
+        <a href="v1reviews/search_by_non-existent_user_id_&amp;_range_of_date.html">search by non-existent user_id &amp; range of date</a>
+      </li>
+      <li>
+        <a href="v1reviews/search_by_store_id_&amp;_range_of_date.html">search by store_id &amp; range of date</a>
+      </li>
+      <li>
+        <a href="v1reviews/search_by_user_id_&amp;_range_of_date.html">search by user_id &amp; range of date</a>
+      </li>
+      <li>
+        <a href="v1reviews/search_review_by_order_id_&amp;_id.html">search review by order_id &amp; id</a>
+      </li>
+      <li>
+        <a href="v1reviews/search_review_by_order_id_&amp;_non-existent_id.html">search review by order_id &amp; non-existent id</a>
+      </li>
+      <li>
+        <a href="v1reviews/show.html">show</a>
+      </li>
+      <li>
+        <a href="v1reviews/show_a_non-existent_review.html">show a non-existent review</a>
+      </li>
+      <li>
+        <a href="v1reviews/show_with_a_valid_api_key.html">show with a valid api_key</a>
+      </li>
+      <li>
+        <a href="v1reviews/show_with_a_valid_moderator_api_key.html">show with a valid moderator api_key</a>
+      </li>
+      <li>
+        <a href="v1reviews/show_with_invalid_api_key.html">show with invalid api_key</a>
+      </li>
+      <li>
+        <a href="v1reviews/show_with_invalid_api_key.html">show with invalid api_key</a>
+      </li>
+      <li>
+        <a href="v1reviews/update.html">update</a>
+      </li>
+      <li>
+        <a href="v1reviews/update.html">update</a>
+      </li>
+      <li>
+        <a href="v1reviews/update_invalid_score_a_review_already_scored.html">update invalid score a review already scored</a>
+      </li>
+      <li>
+        <a href="v1reviews/update_invalid_score_and_empty_values.html">update invalid score and empty values</a>
+      </li>
+      <li>
+        <a href="v1reviews/update_non-existent_resource.html">update non-existent resource</a>
+      </li>
+      <li>
+        <a href="v1reviews/update_with_invalid_api_key.html">update with invalid api_key</a>
+      </li>
+      <li>
+        <a href="v1reviews/update_with_invalid_api_key.html">update with invalid api_key</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>V1::Services</h2>
+
+    <ul>
+      <li>
+        <a href="v1services/create.html">create</a>
+      </li>
+      <li>
+        <a href="v1services/create_with_empty_values.html">create with empty values</a>
+      </li>
+    </ul>
+  </div>
+  <div class="article">
+    <h2>V1::StoresScore</h2>
+
+    <ul>
+      <li>
+        <a href="v1storesscore/average_store_score.html">average store score</a>
+      </li>
+      <li>
+        <a href="v1storesscore/show_a_non-existent_store.html">show a non-existent store</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{
+  "resource": "V1::Reviews",
+  "resource_explanation": null,
+  "http_method": "PATCH",
+  "route": "/v1/reviews/:id",
+  "description": "update invalid score and empty values",
+  "explanation": "Does not update a review with empty values ",
+  "parameters": [
+    {
+      "scope": "review",
+      "required": true,
+      "type": "integer",
+      "name": "store_id",
+      "description": "Store ID"
+    },
+    {
+      "scope": "review",
+      "required": true,
+      "type": "integer",
+      "name": "order_id",
+      "description": "Order ID"
+    },
+    {
+      "scope": "review",
+      "required": true,
+      "type": "integer",
+      "name": "user_id",
+      "description": "User ID"
+    },
+    {
+      "scope": "review",
+      "required": true,
+      "type": "string",
+      "name": "opinion",
+      "description": "Opinion"
+    },
+    {
+      "scope": "review",
+      "required": true,
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "default": 5,
+      "name": "score",
+      "description": "Score"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PATCH",
+      "request_path": "/v1/reviews/75",
+      "request_body": "{\"review\":{\"store_id\":null,\"order_id\":null,\"user_id\":null,\"opinion\":null,\"score\":6}}",
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Token token=qCwYhQXsr8rr792ZGIiCcgtt",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"store_id\": [\n    \"can't be blank\"\n  ],\n  \"order_id\": [\n    \"can't be blank\"\n  ],\n  \"user_id\": [\n    \"can't be blank\"\n  ],\n  \"opinion\": [\n    \"can't be blank\"\n  ],\n  \"score\": [\n    \"6 is not a valid score\"\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "6d4539e6-b435-4130-b438-cace2873cc55",
+        "X-Runtime": "0.011423",
+        "Content-Length": "154"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"localhost:3000/v1/reviews/75\" -d '{\"review\":{\"store_id\":null,\"order_id\":null,\"user_id\":null,\"opinion\":null,\"score\":6}}' -X PATCH \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

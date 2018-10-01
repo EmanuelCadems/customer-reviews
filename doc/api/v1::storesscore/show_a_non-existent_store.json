@@ -1,0 +1,43 @@
+{
+  "resource": "V1::StoresScore",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/v1/stores_score/:id?from=:from&to=:to",
+  "description": "show a non-existent store",
+  "explanation": "Shows 204",
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/v1/stores_score/100?from=&to=",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Token token=qCwYhQXsr8rr792ZGIiCcgtt",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "from": "",
+        "to": ""
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "e5fdec4a-e83f-4f7b-af94-9a2007283e85",
+        "X-Runtime": "0.019132"
+      },
+      "response_content_type": null,
+      "curl": "curl -g \"localhost:3000/v1/stores_score/100?from=&to=\" -X GET \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

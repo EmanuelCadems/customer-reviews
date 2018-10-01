@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>V1::Reviews API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>V1::Reviews API</h1>
+
+      <div class="article">
+        <h2>show</h2>
+        <h3>GET /v1/reviews/:id</h3>
+          <p class="explanation">
+            Shows a review 
+          </p>
+
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Accept: application/json
+Content-Type: application/json
+Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /v1/reviews/15</pre>
+
+
+
+            <h4>cURL</h4>
+            <pre class="request curl">curl -g &quot;localhost:3000/v1/reviews/15&quot; -X GET \
+	-H &quot;Accept: application/json&quot; \
+	-H &quot;Content-Type: application/json&quot; \
+	-H &quot;Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt&quot; \
+	-H &quot;Host: example.org&quot; \
+	-H &quot;Cookie: &quot;</pre>
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">Content-Type: application/json; charset=utf-8
+ETag: W/&quot;091773e5eaae884f61ac9e872709b5c3&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 46e64bf4-8a81-414e-b08b-d7f9fb3e8c72
+X-Runtime: 0.010880
+Content-Length: 247</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;id&quot;: 15,
+  &quot;store_id&quot;: 12,
+  &quot;order_id&quot;: 12,
+  &quot;user_id&quot;: 12,
+  &quot;opinion&quot;: &quot;Aut voluptates voluptatum. Ex quam quibusdam. Soluta molestiae et.&quot;,
+  &quot;score&quot;: 4,
+  &quot;created_at&quot;: &quot;2018-10-01T04:40:16.142-03:00&quot;,
+  &quot;updated_at&quot;: &quot;2018-10-01T04:40:16.142-03:00&quot;,
+  &quot;deleted_at&quot;: null
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "resource": "V1::Reviews",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/v1/reviews/:id",
+  "description": "show a non-existent review",
+  "explanation": "Shows 404",
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/v1/reviews/100",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Token token=qCwYhQXsr8rr792ZGIiCcgtt",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 404,
+      "response_status_text": "Not Found",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "text/html",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "830709a4-99a2-4d5b-91e5-9f3f0b8fada8",
+        "X-Runtime": "0.002958",
+        "Content-Length": "0"
+      },
+      "response_content_type": "text/html",
+      "curl": "curl -g \"localhost:3000/v1/reviews/100\" -X GET \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

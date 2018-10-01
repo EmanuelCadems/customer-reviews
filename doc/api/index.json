@@ -1,0 +1,260 @@
+{
+  "resources": [
+    {
+      "name": "V1::Reviews",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "create",
+          "link": "v1::reviews/create.json",
+          "groups": "all",
+          "route": "/v1/reviews",
+          "method": "post"
+        },
+        {
+          "description": "create invalid score a review already scored",
+          "link": "v1::reviews/create_invalid_score_a_review_already_scored.json",
+          "groups": "all",
+          "route": "/v1/reviews",
+          "method": "post"
+        },
+        {
+          "description": "create invalid score and empty values",
+          "link": "v1::reviews/create_invalid_score_and_empty_values.json",
+          "groups": "all",
+          "route": "/v1/reviews",
+          "method": "post"
+        },
+        {
+          "description": "create with a valid moderator api_key",
+          "link": "v1::reviews/create_with_a_valid_moderator_api_key.json",
+          "groups": "all",
+          "route": "/v1/reviews",
+          "method": "post"
+        },
+        {
+          "description": "create with invalid api_key",
+          "link": "v1::reviews/create_with_invalid_api_key.json",
+          "groups": "all",
+          "route": "/v1/reviews",
+          "method": "post"
+        },
+        {
+          "description": "create with invalid api_key",
+          "link": "v1::reviews/create_with_invalid_api_key.json",
+          "groups": "all",
+          "route": "/v1/reviews",
+          "method": "post"
+        },
+        {
+          "description": "delete",
+          "link": "v1::reviews/delete.json",
+          "groups": "all",
+          "route": "/v1/reviews/:id",
+          "method": "delete"
+        },
+        {
+          "description": "delete non-existent resource",
+          "link": "v1::reviews/delete_non-existent_resource.json",
+          "groups": "all",
+          "route": "/v1/reviews/:id",
+          "method": "delete"
+        },
+        {
+          "description": "delete with a valid moderator api_key",
+          "link": "v1::reviews/delete_with_a_valid_moderator_api_key.json",
+          "groups": "all",
+          "route": "/v1/reviews/:id",
+          "method": "delete"
+        },
+        {
+          "description": "delete with invalid api_key",
+          "link": "v1::reviews/delete_with_invalid_api_key.json",
+          "groups": "all",
+          "route": "/v1/reviews/:id",
+          "method": "delete"
+        },
+        {
+          "description": "delete with invalid api_key",
+          "link": "v1::reviews/delete_with_invalid_api_key.json",
+          "groups": "all",
+          "route": "/v1/reviews/:id",
+          "method": "delete"
+        },
+        {
+          "description": "search by non-existent store_id & range of date",
+          "link": "v1::reviews/search_by_non-existent_store_id_&_range_of_date.json",
+          "groups": "all",
+          "route": "/v1/reviews?q[store_id_eq]=:store_id&q[created_at_gteq]=:from&q[created_at_end_of_day_lteq]=:to",
+          "method": "get"
+        },
+        {
+          "description": "search by non-existent user_id & range of date",
+          "link": "v1::reviews/search_by_non-existent_user_id_&_range_of_date.json",
+          "groups": "all",
+          "route": "/v1/reviews?q[user_id_eq]=:user_id&q[created_at_gteq]=:from&q[created_at_end_of_day_lteq]=:to",
+          "method": "get"
+        },
+        {
+          "description": "search by store_id & range of date",
+          "link": "v1::reviews/search_by_store_id_&_range_of_date.json",
+          "groups": "all",
+          "route": "/v1/reviews?q[store_id_eq]=:store_id&q[created_at_gteq]=:from&q[created_at_end_of_day_lteq]=:to",
+          "method": "get"
+        },
+        {
+          "description": "search by user_id & range of date",
+          "link": "v1::reviews/search_by_user_id_&_range_of_date.json",
+          "groups": "all",
+          "route": "/v1/reviews?q[user_id_eq]=:user_id&q[created_at_gteq]=:from&q[created_at_end_of_day_lteq]=:to",
+          "method": "get"
+        },
+        {
+          "description": "search review by order_id & id",
+          "link": "v1::reviews/search_review_by_order_id_&_id.json",
+          "groups": "all",
+          "route": "/v1/reviews?q[order_id_eq]=:order_id&q[id_eq]=:id",
+          "method": "get"
+        },
+        {
+          "description": "search review by order_id & non-existent id",
+          "link": "v1::reviews/search_review_by_order_id_&_non-existent_id.json",
+          "groups": "all",
+          "route": "/v1/reviews?q[order_id_eq]=:order_id&q[id_eq]=:id",
+          "method": "get"
+        },
+        {
+          "description": "show",
+          "link": "v1::reviews/show.json",
+          "groups": "all",
+          "route": "/v1/reviews/:id",
+          "method": "get"
+        },
+        {
+          "description": "show a non-existent review",
+          "link": "v1::reviews/show_a_non-existent_review.json",
+          "groups": "all",
+          "route": "/v1/reviews/:id",
+          "method": "get"
+        },
+        {
+          "description": "show with a valid api_key",
+          "link": "v1::reviews/show_with_a_valid_api_key.json",
+          "groups": "all",
+          "route": "/v1/reviews/:id",
+          "method": "get"
+        },
+        {
+          "description": "show with a valid moderator api_key",
+          "link": "v1::reviews/show_with_a_valid_moderator_api_key.json",
+          "groups": "all",
+          "route": "/v1/reviews/:id",
+          "method": "get"
+        },
+        {
+          "description": "show with invalid api_key",
+          "link": "v1::reviews/show_with_invalid_api_key.json",
+          "groups": "all",
+          "route": "/v1/reviews/:id",
+          "method": "get"
+        },
+        {
+          "description": "show with invalid api_key",
+          "link": "v1::reviews/show_with_invalid_api_key.json",
+          "groups": "all",
+          "route": "/v1/reviews/:id",
+          "method": "get"
+        },
+        {
+          "description": "update",
+          "link": "v1::reviews/update.json",
+          "groups": "all",
+          "route": "/v1/reviews/:id",
+          "method": "patch"
+        },
+        {
+          "description": "update",
+          "link": "v1::reviews/update.json",
+          "groups": "all",
+          "route": "/v1/reviews/:id",
+          "method": "patch"
+        },
+        {
+          "description": "update invalid score a review already scored",
+          "link": "v1::reviews/update_invalid_score_a_review_already_scored.json",
+          "groups": "all",
+          "route": "/v1/reviews/:id",
+          "method": "patch"
+        },
+        {
+          "description": "update invalid score and empty values",
+          "link": "v1::reviews/update_invalid_score_and_empty_values.json",
+          "groups": "all",
+          "route": "/v1/reviews/:id",
+          "method": "patch"
+        },
+        {
+          "description": "update non-existent resource",
+          "link": "v1::reviews/update_non-existent_resource.json",
+          "groups": "all",
+          "route": "/v1/reviews/:id",
+          "method": "patch"
+        },
+        {
+          "description": "update with invalid api_key",
+          "link": "v1::reviews/update_with_invalid_api_key.json",
+          "groups": "all",
+          "route": "/v1/reviews/:id",
+          "method": "patch"
+        },
+        {
+          "description": "update with invalid api_key",
+          "link": "v1::reviews/update_with_invalid_api_key.json",
+          "groups": "all",
+          "route": "/v1/reviews/:id",
+          "method": "patch"
+        }
+      ]
+    },
+    {
+      "name": "V1::Services",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "create",
+          "link": "v1::services/create.json",
+          "groups": "all",
+          "route": "/v1/services",
+          "method": "post"
+        },
+        {
+          "description": "create with empty values",
+          "link": "v1::services/create_with_empty_values.json",
+          "groups": "all",
+          "route": "/v1/services",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "V1::StoresScore",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "average store score",
+          "link": "v1::storesscore/average_store_score.json",
+          "groups": "all",
+          "route": "/v1/stores_score/:id?from=:from&to=:to",
+          "method": "get"
+        },
+        {
+          "description": "show a non-existent store",
+          "link": "v1::storesscore/show_a_non-existent_store.json",
+          "groups": "all",
+          "route": "/v1/stores_score/:id?from=:from&to=:to",
+          "method": "get"
+        }
+      ]
+    }
+  ]
+}

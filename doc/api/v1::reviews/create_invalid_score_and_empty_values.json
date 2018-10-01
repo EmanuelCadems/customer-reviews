@@ -1,0 +1,80 @@
+{
+  "resource": "V1::Reviews",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "/v1/reviews",
+  "description": "create invalid score and empty values",
+  "explanation": "Does not create a review with empty values ",
+  "parameters": [
+    {
+      "scope": "review",
+      "required": true,
+      "type": "integer",
+      "name": "store_id",
+      "description": "Store ID"
+    },
+    {
+      "scope": "review",
+      "required": true,
+      "type": "integer",
+      "name": "order_id",
+      "description": "Order ID"
+    },
+    {
+      "scope": "review",
+      "required": true,
+      "type": "integer",
+      "name": "user_id",
+      "description": "User ID"
+    },
+    {
+      "scope": "review",
+      "required": true,
+      "type": "string",
+      "name": "opinion",
+      "description": "Opinion"
+    },
+    {
+      "scope": "review",
+      "required": true,
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "default": 5,
+      "name": "score",
+      "description": "Score"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/v1/reviews",
+      "request_body": "{\"review\":{\"score\":6}}",
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Token token=qCwYhQXsr8rr792ZGIiCcgtt",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"store_id\": [\n    \"can't be blank\"\n  ],\n  \"order_id\": [\n    \"can't be blank\"\n  ],\n  \"user_id\": [\n    \"can't be blank\"\n  ],\n  \"opinion\": [\n    \"can't be blank\"\n  ],\n  \"score\": [\n    \"6 is not a valid score\"\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "84de5745-8f4b-407e-a0f5-8ccdbd62a6d2",
+        "X-Runtime": "0.013460",
+        "Content-Length": "154"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"localhost:3000/v1/reviews\" -d '{\"review\":{\"score\":6}}' -X POST \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

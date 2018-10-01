@@ -1,0 +1,44 @@
+{
+  "resource": "V1::Reviews",
+  "resource_explanation": null,
+  "http_method": "DELETE",
+  "route": "/v1/reviews/:id",
+  "description": "delete with invalid api_key",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "/v1/reviews/11",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Token token=qCwYhQXsr8rr792ZGIiCcgtt",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 401,
+      "response_status_text": "Unauthorized",
+      "response_body": " ",
+      "response_headers": {
+        "WWW-Authenticate": "Token realm=\"Application\"",
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "f3a2063c-8439-4ae5-a4b5-484d4496c72b",
+        "X-Runtime": "0.002802",
+        "Content-Length": "1"
+      },
+      "response_content_type": "text/plain; charset=utf-8",
+      "curl": "curl \"localhost:3000/v1/reviews/11\" -d '' -X DELETE \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

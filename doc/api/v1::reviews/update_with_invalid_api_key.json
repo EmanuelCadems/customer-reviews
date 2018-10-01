@@ -1,0 +1,81 @@
+{
+  "resource": "V1::Reviews",
+  "resource_explanation": null,
+  "http_method": "PATCH",
+  "route": "/v1/reviews/:id",
+  "description": "update with invalid api_key",
+  "explanation": null,
+  "parameters": [
+    {
+      "scope": "review",
+      "required": true,
+      "type": "integer",
+      "name": "store_id",
+      "description": "Store ID"
+    },
+    {
+      "scope": "review",
+      "required": true,
+      "type": "integer",
+      "name": "order_id",
+      "description": "Order ID"
+    },
+    {
+      "scope": "review",
+      "required": true,
+      "type": "integer",
+      "name": "user_id",
+      "description": "User ID"
+    },
+    {
+      "scope": "review",
+      "required": true,
+      "type": "string",
+      "name": "opinion",
+      "description": "Opinion"
+    },
+    {
+      "scope": "review",
+      "required": true,
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "default": 5,
+      "name": "score",
+      "description": "Score"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PATCH",
+      "request_path": "/v1/reviews/10",
+      "request_body": "{\"review\":{\"store_id\":1,\"order_id\":1,\"user_id\":1,\"opinion\":\"Good food and service\",\"score\":5}}",
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Token token=invalid",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 401,
+      "response_status_text": "Unauthorized",
+      "response_body": " ",
+      "response_headers": {
+        "WWW-Authenticate": "Token realm=\"Application\"",
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "f26123e9-1e1a-46b9-81ac-843cb7726388",
+        "X-Runtime": "0.003075",
+        "Content-Length": "1"
+      },
+      "response_content_type": "text/plain; charset=utf-8",
+      "curl": "curl \"localhost:3000/v1/reviews/10\" -d '{\"review\":{\"store_id\":1,\"order_id\":1,\"user_id\":1,\"opinion\":\"Good food and service\",\"score\":5}}' -X PATCH \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=invalid\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

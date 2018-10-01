@@ -1,0 +1,44 @@
+{
+  "resource": "V1::Reviews",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/v1/reviews/:id",
+  "description": "show",
+  "explanation": "Shows a review ",
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/v1/reviews/15",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Token token=qCwYhQXsr8rr792ZGIiCcgtt",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 15,\n  \"store_id\": 12,\n  \"order_id\": 12,\n  \"user_id\": 12,\n  \"opinion\": \"Aut voluptates voluptatum. Ex quam quibusdam. Soluta molestiae et.\",\n  \"score\": 4,\n  \"created_at\": \"2018-10-01T04:40:16.142-03:00\",\n  \"updated_at\": \"2018-10-01T04:40:16.142-03:00\",\n  \"deleted_at\": null\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"091773e5eaae884f61ac9e872709b5c3\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "46e64bf4-8a81-414e-b08b-d7f9fb3e8c72",
+        "X-Runtime": "0.010880",
+        "Content-Length": "247"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl -g \"localhost:3000/v1/reviews/15\" -X GET \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

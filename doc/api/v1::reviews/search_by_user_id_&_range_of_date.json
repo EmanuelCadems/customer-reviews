@@ -1,0 +1,49 @@
+{
+  "resource": "V1::Reviews",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/v1/reviews?q[user_id_eq]=:user_id&q[created_at_gteq]=:from&q[created_at_end_of_day_lteq]=:to",
+  "description": "search by user_id & range of date",
+  "explanation": "Searches a review by user_id and range of date",
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/v1/reviews?q[user_id_eq]=1&q[created_at_gteq]=2018-10-01&q[created_at_end_of_day_lteq]=2018-10-31",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Token token=qCwYhQXsr8rr792ZGIiCcgtt",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "q": {
+          "user_id_eq": "1",
+          "created_at_gteq": "2018-10-01",
+          "created_at_end_of_day_lteq": "2018-10-31"
+        }
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 60,\n    \"store_id\": 21,\n    \"order_id\": 57,\n    \"user_id\": 1,\n    \"opinion\": \"Enim natus modi. Nihil minima qui. Et aliquam omnis.\",\n    \"score\": 3,\n    \"created_at\": \"2018-10-01T04:40:16.606-03:00\",\n    \"updated_at\": \"2018-10-01T04:40:16.606-03:00\",\n    \"deleted_at\": null\n  },\n  {\n    \"id\": 61,\n    \"store_id\": 22,\n    \"order_id\": 58,\n    \"user_id\": 1,\n    \"opinion\": \"Dolorem sunt optio. Necessitatibus ea explicabo. Commodi temporibus ea.\",\n    \"score\": 2,\n    \"created_at\": \"2018-10-01T04:40:16.610-03:00\",\n    \"updated_at\": \"2018-10-01T04:40:16.610-03:00\",\n    \"deleted_at\": null\n  },\n  {\n    \"id\": 62,\n    \"store_id\": 23,\n    \"order_id\": 59,\n    \"user_id\": 1,\n    \"opinion\": \"Porro eius eum. Doloremque rerum quisquam. Esse asperiores saepe.\",\n    \"score\": 4,\n    \"created_at\": \"2018-10-01T04:40:16.615-03:00\",\n    \"updated_at\": \"2018-10-01T04:40:16.615-03:00\",\n    \"deleted_at\": null\n  },\n  {\n    \"id\": 63,\n    \"store_id\": 24,\n    \"order_id\": 60,\n    \"user_id\": 1,\n    \"opinion\": \"Sit necessitatibus illo. Aut nobis ipsum. Recusandae quidem qui.\",\n    \"score\": 4,\n    \"created_at\": \"2018-10-01T04:40:16.619-03:00\",\n    \"updated_at\": \"2018-10-01T04:40:16.619-03:00\",\n    \"deleted_at\": null\n  }\n]",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"2f653eb12e8798590913eb075ac59196\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "3ecbea05-c2ff-4014-a729-467de2674314",
+        "X-Runtime": "0.026912",
+        "Content-Length": "977"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl -g \"localhost:3000/v1/reviews?q[user_id_eq]=1&q[created_at_gteq]=2018-10-01&q[created_at_end_of_day_lteq]=2018-10-31\" -X GET \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

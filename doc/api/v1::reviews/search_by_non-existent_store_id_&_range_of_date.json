@@ -1,0 +1,46 @@
+{
+  "resource": "V1::Reviews",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/v1/reviews?q[store_id_eq]=:store_id&q[created_at_gteq]=:from&q[created_at_end_of_day_lteq]=:to",
+  "description": "search by non-existent store_id & range of date",
+  "explanation": "Shows 204",
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/v1/reviews?q[store_id_eq]=2&q[created_at_gteq]=2018-10-01&q[created_at_end_of_day_lteq]=2018-10-31",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Token token=qCwYhQXsr8rr792ZGIiCcgtt",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "q": {
+          "store_id_eq": "2",
+          "created_at_gteq": "2018-10-01",
+          "created_at_end_of_day_lteq": "2018-10-31"
+        }
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "7f41a5de-e51c-4a36-94ed-6687444fc85f",
+        "X-Runtime": "0.023124"
+      },
+      "response_content_type": null,
+      "curl": "curl -g \"localhost:3000/v1/reviews?q[store_id_eq]=2&q[created_at_gteq]=2018-10-01&q[created_at_end_of_day_lteq]=2018-10-31\" -X GET \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

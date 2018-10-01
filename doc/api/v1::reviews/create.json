@@ -1,0 +1,81 @@
+{
+  "resource": "V1::Reviews",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "/v1/reviews",
+  "description": "create",
+  "explanation": "Creates a new review ",
+  "parameters": [
+    {
+      "scope": "review",
+      "required": true,
+      "type": "integer",
+      "name": "store_id",
+      "description": "Store ID"
+    },
+    {
+      "scope": "review",
+      "required": true,
+      "type": "integer",
+      "name": "order_id",
+      "description": "Order ID"
+    },
+    {
+      "scope": "review",
+      "required": true,
+      "type": "integer",
+      "name": "user_id",
+      "description": "User ID"
+    },
+    {
+      "scope": "review",
+      "required": true,
+      "type": "string",
+      "name": "opinion",
+      "description": "Opinion"
+    },
+    {
+      "scope": "review",
+      "required": true,
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "default": 5,
+      "name": "score",
+      "description": "Score"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/v1/reviews",
+      "request_body": "{\"review\":{\"store_id\":1,\"order_id\":1,\"user_id\":1,\"opinion\":\"Good food and service\",\"score\":5}}",
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Token token=qCwYhQXsr8rr792ZGIiCcgtt",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\n  \"id\": 12,\n  \"store_id\": 1,\n  \"order_id\": 1,\n  \"user_id\": 1,\n  \"opinion\": \"Good food and service\",\n  \"score\": 5,\n  \"created_at\": \"2018-10-01T04:40:16.008-03:00\",\n  \"updated_at\": \"2018-10-01T04:40:16.008-03:00\",\n  \"deleted_at\": null\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"b097946a35124f9c6f13481fefba2113\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "1254c912-5b42-4799-9859-3ed5b62eb45e",
+        "X-Runtime": "0.009615",
+        "Content-Length": "199"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"localhost:3000/v1/reviews\" -d '{\"review\":{\"store_id\":1,\"order_id\":1,\"user_id\":1,\"opinion\":\"Good food and service\",\"score\":5}}' -X POST \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

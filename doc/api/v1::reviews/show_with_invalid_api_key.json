@@ -1,0 +1,44 @@
+{
+  "resource": "V1::Reviews",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/v1/reviews/:id",
+  "description": "show with invalid api_key",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/v1/reviews/9",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Token token=invalid",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 401,
+      "response_status_text": "Unauthorized",
+      "response_body": " ",
+      "response_headers": {
+        "WWW-Authenticate": "Token realm=\"Application\"",
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "597b9a2f-e4bc-4883-8ccd-b87494c3b5d8",
+        "X-Runtime": "0.002146",
+        "Content-Length": "1"
+      },
+      "response_content_type": "text/plain; charset=utf-8",
+      "curl": "curl -g \"localhost:3000/v1/reviews/9\" -X GET \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=invalid\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

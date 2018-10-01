@@ -1,0 +1,46 @@
+{
+  "resource": "V1::StoresScore",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/v1/stores_score/:id?from=:from&to=:to",
+  "description": "average store score",
+  "explanation": "Shows a average store score ",
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/v1/stores_score/1?from=2018-10-01&to=2018-10-31",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Token token=qCwYhQXsr8rr792ZGIiCcgtt",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "from": "2018-10-01",
+        "to": "2018-10-31"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"avg\": \"2.5\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"a35aa8037666df5e122f8d5f0ff7a8c3\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "f2dd142a-6618-4c81-9d79-73c47b230086",
+        "X-Runtime": "0.031430",
+        "Content-Length": "13"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl -g \"localhost:3000/v1/stores_score/1?from=2018-10-01&to=2018-10-31\" -X GET \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}
