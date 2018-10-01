@@ -1,9 +1,9 @@
 # README
 
 [![GitHub version](https://badge.fury.io/gh/EmanuelCadems%2Fcustomer-reviews.svg)](https://badge.fury.io/gh/EmanuelCadems%2Fcustomer-reviews)
-
+[![Build Status](https://travis-ci.com/EmanuelCadems/customer-reviews.svg?branch=master)](https://travis-ci.com/EmanuelCadems/customer-reviews)
 [![Maintainability](https://api.codeclimate.com/v1/badges/7489ae08985b69937a91/maintainability)](https://codeclimate.com/github/EmanuelCadems/customer-reviews/maintainability)
-
+[![Coverage Status](https://coveralls.io/repos/github/EmanuelCadems/customer-reviews/badge.svg?branch=master)](https://coveralls.io/github/EmanuelCadems/customer-reviews?branch=master)
 
 This is an API about CustomerReview. You can find the full description inside specs.
 
