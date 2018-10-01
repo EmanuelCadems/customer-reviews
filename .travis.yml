@@ -1,0 +1,18 @@
+language: ruby
+rvm:
+- 2.5.1
+services:
+- postgresql
+before_script:
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+script: bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: JyY+InRVSDKoPNcVWj7v8FFbnwY4h0k7s4y4Uqf6PGFZAIqxFBEe1YXtmmH2cx4AuIA6KXLnw9DZjM7V5zCWmh+7+rz54Z26Z1FeLtdiU/+pvis7/loiFfBWDDu1hMkQzjB4l94kAKYviXA6rcyUh5a4XD06EJyZPsK59+E0YFVbMseHMScw3cGdiwf/Vwq45mcNHpgTf4Cz1HUXzbWVkuVmChG5x4J7qe2+kWQw5rEk+musKlz3X//d6ezIkBYs+6mBdUSVktRTd3fJAjIdaU6SFn5rIEU4NZmvpUji+tnVp9l5jTo4O58wIJiUvO80uO7QsdYIyjU7Dtv+C9DjH84f9JPSgVoHShpmDVJvuZgCFsJwzZ/ftCTWUx1M1d3dJlc3r+2YfwXKY4uopI4LTAiZpHnK8/YUAUB3R9gihFX5dx5YMM5ht5LcJ91weqWU0/O2HSbOuehbR88bjr3ddrnHXahVoDkEgHNBO9eqnZ6ETfisCkk0X/hh9vwj2wdkfg5LNhXR0EeZuta0YcfA+jfnrN1mm4K1lToJtD5yzM3ewBKTc1GTCEEcwd1ZpFU/FD4CqZFFk2Q7A/kCTxMB8ydMc6CaTBN7H8PYeduGb7H6jrqsftoKdOzkdwyvTFuDCRDHXZulmf7/ZgyqH3aHGLzEjPxiKhm1CwppMygDy94=
+  app: stark-mesa-90873
+  on:
+    repo: EmanuelCadems/customer-reviews
+addons:
+  postgresql: '9.4'
