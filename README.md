@@ -24,7 +24,7 @@ run:
 ```bash
   $ cd .
 ```
-This will select the ruby version and will also create a gemset called qaa.
+This will select the ruby version and will also create a gemset called customer-reviews.
 
 ## System dependencies
   Postgresql 9.4
@@ -34,7 +34,7 @@ This will select the ruby version and will also create a gemset called qaa.
 
 Install bundler with:
 ```bash
-  $ gem install bundler -v='1.16.4' --no-rdoc --no-ri
+  $ gem install bundler -v='1.16.5' --no-rdoc --no-ri
 ```
 Then install all dependencies with
 ```bash
