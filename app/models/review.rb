@@ -18,4 +18,22 @@ class Review < ApplicationRecord
   scope :score_avg_by_store_and_period, -> (store_id, from, to) {
     by_store(store_id).between(from, to).average(:score)
   }
+
+  after_create :notify_creation
+  after_update :notify_updating
+  after_destroy :notify_destroying
+
+  private
+
+  def notify_creation
+    CurlParserJob.perform_later self, 'creating'
+  end
+
+  def notify_updating
+    CurlParserJob.perform_later self, 'updating'
+  end
+
+  def notify_destroying
+    CurlParserJob.perform_later self, 'destroying'
+  end
 end

@@ -96,4 +96,49 @@ RSpec.describe Review, type: :model do
       expect(Review.all).to include(review)
     end
   end
+
+  describe 'callbacks' do
+    context 'after_create' do
+      describe '#notify_creation' do
+        let(:review) { build(:review) }
+        subject { review }
+        before do
+          allow(CurlParserJob).to receive(:perform_later).with(review, 'creating')
+        end
+
+        it 'calls to CurlParserJob' do
+          expect(CurlParserJob).to receive(:perform_later).with(review, 'creating')
+          subject.save
+        end
+      end
+    end
+    context 'after_update' do
+      describe '#notify_updating' do
+        let(:review) { create(:review) }
+        subject { review }
+        before do
+          allow(CurlParserJob).to receive(:perform_later).with(review, 'updating')
+        end
+
+        it 'calls to CurlParserJob' do
+          expect(CurlParserJob).to receive(:perform_later).with(review, 'updating')
+          subject.save
+        end
+      end
+    end
+    context 'after_destroy' do
+      describe '#notify_destroying' do
+        let(:review) { create(:review) }
+        before do
+          review
+          allow(CurlParserJob).to receive(:perform_later).with(review, 'destroying')
+        end
+
+        it 'calls to CurlParserJob' do
+          expect(CurlParserJob).to receive(:perform_later).with(review, 'destroying')
+          review.destroy
+        end
+      end
+    end
+  end
 end
