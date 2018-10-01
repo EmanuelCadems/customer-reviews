@@ -1,3 +1,5 @@
+require 'coveralls'
+Coveralls.wear!
 require 'vcr_setup'
 require 'webmock/rspec'
 require 'support/tasks'
