@@ -31,11 +31,11 @@
       "response_body": null,
       "response_headers": {
         "Cache-Control": "no-cache",
-        "X-Request-Id": "4a0bfaeb-5064-4aa7-a2c3-475bf60e3b63",
-        "X-Runtime": "0.009988"
+        "X-Request-Id": "adb078c5-4d52-4f5e-9ab6-3e3d704d1ecb",
+        "X-Runtime": "0.010006"
       },
       "response_content_type": null,
-      "curl": "curl \"localhost:3000/v1/reviews/3\" -d '' -X DELETE \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=70ogucD4kA947xbaYJrt3Att\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"https://stark-mesa-90873.herokuapp.com/v1/reviews/3\" -d '' -X DELETE \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=70ogucD4kA947xbaYJrt3Att\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -182,7 +182,7 @@ Cookie: </pre>
             <pre class="request body">{"review":{"store_id":1,"order_id":1,"user_id":1,"opinion":"Good food and service","score":5}}</pre>
 
             <h4>cURL</h4>
-            <pre class="request curl">curl &quot;localhost:3000/v1/reviews/10&quot; -d &#39;{&quot;review&quot;:{&quot;store_id&quot;:1,&quot;order_id&quot;:1,&quot;user_id&quot;:1,&quot;opinion&quot;:&quot;Good food and service&quot;,&quot;score&quot;:5}}&#39; -X PATCH \
+            <pre class="request curl">curl &quot;https://stark-mesa-90873.herokuapp.com/v1/reviews/10&quot; -d &#39;{&quot;review&quot;:{&quot;store_id&quot;:1,&quot;order_id&quot;:1,&quot;user_id&quot;:1,&quot;opinion&quot;:&quot;Good food and service&quot;,&quot;score&quot;:5}}&#39; -X PATCH \
 	-H &quot;Accept: application/json&quot; \
 	-H &quot;Content-Type: application/json&quot; \
 	-H &quot;Authorization: Token token=invalid&quot; \
@@ -194,8 +194,8 @@ Cookie: </pre>
               <pre class="response headers">WWW-Authenticate: Token realm=&quot;Application&quot;
 Content-Type: text/plain; charset=utf-8
 Cache-Control: no-cache
-X-Request-Id: f26123e9-1e1a-46b9-81ac-843cb7726388
-X-Runtime: 0.003075
+X-Request-Id: 2cc21b77-d429-4046-9922-02a322240b00
+X-Runtime: 0.002923
 Content-Length: 1</pre>
             <h4>Status</h4>
             <pre class="response status">401 Unauthorized</pre>

@@ -36,11 +36,11 @@
       "response_body": null,
       "response_headers": {
         "Cache-Control": "no-cache",
-        "X-Request-Id": "e23ec34a-292b-4f09-9a37-e7a33933650f",
-        "X-Runtime": "0.014617"
+        "X-Request-Id": "4f06ae2d-496d-4a95-9bef-bd283359ebbd",
+        "X-Runtime": "0.014141"
       },
       "response_content_type": null,
-      "curl": "curl -g \"localhost:3000/v1/reviews?q[user_id_eq]=2&q[created_at_gteq]=2018-10-01&q[created_at_end_of_day_lteq]=2018-10-31\" -X GET \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl -g \"https://stark-mesa-90873.herokuapp.com/v1/reviews?q[user_id_eq]=2&q[created_at_gteq]=2018-10-01&q[created_at_end_of_day_lteq]=2018-10-31\" -X GET \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

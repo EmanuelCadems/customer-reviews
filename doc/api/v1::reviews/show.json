@@ -28,17 +28,17 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 15,\n  \"store_id\": 12,\n  \"order_id\": 12,\n  \"user_id\": 12,\n  \"opinion\": \"Aut voluptates voluptatum. Ex quam quibusdam. Soluta molestiae et.\",\n  \"score\": 4,\n  \"created_at\": \"2018-10-01T04:40:16.142-03:00\",\n  \"updated_at\": \"2018-10-01T04:40:16.142-03:00\",\n  \"deleted_at\": null\n}",
+      "response_body": "{\n  \"id\": 15,\n  \"store_id\": 12,\n  \"order_id\": 12,\n  \"user_id\": 12,\n  \"opinion\": \"At provident possimus. Voluptatibus aliquam inventore. Rerum sunt quos.\",\n  \"score\": 1,\n  \"created_at\": \"2018-10-01T05:12:11.212-03:00\",\n  \"updated_at\": \"2018-10-01T05:12:11.212-03:00\",\n  \"deleted_at\": null\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"091773e5eaae884f61ac9e872709b5c3\"",
+        "ETag": "W/\"a6f2d858e4cf454ee43dfc2fb2a5ac01\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "46e64bf4-8a81-414e-b08b-d7f9fb3e8c72",
-        "X-Runtime": "0.010880",
-        "Content-Length": "247"
+        "X-Request-Id": "5041927b-5948-4cdd-ad04-f24f005a013d",
+        "X-Runtime": "0.008541",
+        "Content-Length": "252"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl -g \"localhost:3000/v1/reviews/15\" -X GET \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl -g \"https://stark-mesa-90873.herokuapp.com/v1/reviews/15\" -X GET \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=qCwYhQXsr8rr792ZGIiCcgtt\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

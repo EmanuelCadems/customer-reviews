@@ -70,12 +70,12 @@
         "WWW-Authenticate": "Token realm=\"Application\"",
         "Content-Type": "text/plain; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "f26123e9-1e1a-46b9-81ac-843cb7726388",
-        "X-Runtime": "0.003075",
+        "X-Request-Id": "2cc21b77-d429-4046-9922-02a322240b00",
+        "X-Runtime": "0.002923",
         "Content-Length": "1"
       },
       "response_content_type": "text/plain; charset=utf-8",
-      "curl": "curl \"localhost:3000/v1/reviews/10\" -d '{\"review\":{\"store_id\":1,\"order_id\":1,\"user_id\":1,\"opinion\":\"Good food and service\",\"score\":5}}' -X PATCH \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=invalid\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"https://stark-mesa-90873.herokuapp.com/v1/reviews/10\" -d '{\"review\":{\"store_id\":1,\"order_id\":1,\"user_id\":1,\"opinion\":\"Good food and service\",\"score\":5}}' -X PATCH \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: Token token=invalid\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }
